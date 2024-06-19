@@ -36,13 +36,15 @@ finder({
 
 
 local writefile = globalcontainer.writefile
-writefile("aaaaaaaa")
 
 return function(options : {SavePlayers : boolean, Decompile : boolean , SavePlayerCharacters : boolean , NilInstances : boolean })
 	if options.SavePlayers then
 		table.insert(saveServices , "Players")
 		table.insert(saveServices , "StarterPlayer")
 	end
+
+	writefile("aaaaaaaa")
+	print("saved")
 	
 	
 	if not localPlayer.PlayerGui:FindFirstChild("decompileGui") then
