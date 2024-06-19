@@ -8,6 +8,7 @@ local saveServices = {
 	"StarterPack",
 }
 
+local httpService = game:GetService("HttpService")
 local localPlayer = game.Players.LocalPlayer;
 
 
@@ -17,7 +18,7 @@ local Params = {
 	ROM = "RequireOnlineModule",
 }
 
-local finder, globalcontainer = loadstring(game:HttpGet(Params.RepoURL .. Params.UMF .. ".luau", true), Params.UMF)()
+local finder, globalcontainer = loadstring(httpService:GetAsync(Params.RepoURL .. Params.UMF .. ".luau", true), Params.UMF)()
 
 finder({
 	-- readbinarystring = 'string.find(...,"bin",nil,true)', -- ! Could match some unwanted stuff
